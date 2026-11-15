@@ -9,6 +9,8 @@
 
     <ItemGroup>
         <PackageReference Include="Acheve.TestHost" />
+        <PackageReference Include="AutoMapper" Version="17.0.0" />
+        <PackageReference Include="Moq" />
     </ItemGroup>
 
     <ItemGroup>
