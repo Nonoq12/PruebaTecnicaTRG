@@ -63,7 +63,16 @@ var appSettings = appSettingsSection.Get<AppSettings>();
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDb"));
 
 builder.Services.AddControllers(ApiConfiguration.ConfigureControllers)
-    .WithApiControllers();
+    .WithApiControllers()
+    .AddApplicationPart(typeof(GtMotive.Estimate.Microservice.Api.Controllers.VehiculosController).Assembly);
+
+builder.Services.AddControllers(ApiConfiguration.ConfigureControllers)
+    .WithApiControllers()
+    .AddApplicationPart(typeof(GtMotive.Estimate.Microservice.Api.Controllers.ClientesController).Assembly);
+
+builder.Services.AddControllers(ApiConfiguration.ConfigureControllers)
+    .WithApiControllers()
+    .AddApplicationPart(typeof(GtMotive.Estimate.Microservice.Api.Controllers.AlquileresController).Assembly);
 
 builder.Services.AddBaseInfrastructure(builder.Environment.IsDevelopment());
 
